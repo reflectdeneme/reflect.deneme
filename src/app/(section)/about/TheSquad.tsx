@@ -9,7 +9,7 @@ const TheSquad = async () => {
 
   return (
     <>
-      <div>testtt</div>
+      <div>burakkkkkkkk----küürürrdııııooooo</div>
       {slides.items?.map((items) => (
         <div key={items.userName}>{items.userName}</div>
       ))}
