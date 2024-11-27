@@ -12,7 +12,7 @@ const app = next({
 });
 const nextjsHandle = app.getRequestHandler();
 
-exports.ssrreflect = onRequest({ memory: '4GiB' }, (req, res) => {
+exports.ssrreflect = onRequest({ memory: '1GiB' }, (req, res) => {
   return app.prepare().then(() => {
     const parsedUrl = parse(req.url, true);
 
