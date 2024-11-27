@@ -19,9 +19,11 @@ jobs:
       - name: Install Firebase CLI
         run: npm install -g firebase-tools
 
-      # Firebase Login - (Eğer gerekli bir Service Account kullanıyorsanız atlayabilirsiniz)
-      - name: Authenticate Firebase
-        run: firebase login:ci --token "${{ secrets.FIREBASE_AUTH_TOKEN }}"
+      # Service Account JSON'u Yaz
+      - name: Setup Firebase Authentication
+        run: echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}" > $HOME/firebase-key.json
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: $HOME/firebase-key.json
 
       # Bağımlılıkları Yükle
       - name: Install Dependencies
@@ -36,7 +38,7 @@ jobs:
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DENEME_REFLECT_FIREBASE }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
           projectId: deneme-reflect-firebase
           channelId: live
 
@@ -44,4 +46,4 @@ jobs:
       - name: Deploy Firebase Functions
         run: firebase deploy --only functions
         env:
-          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DENEME_REFLECT_FIREBASE }}
+          GOOGLE_APPLICATION_CREDENTIALS: $HOME/firebase-key.json
