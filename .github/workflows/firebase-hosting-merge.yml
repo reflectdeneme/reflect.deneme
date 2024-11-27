@@ -18,7 +18,7 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DENEME_REFLECT_FIREBASE }}
           channelId: live
           projectId: deneme-reflect-firebase
-      - uses: jsryudev/deploy-firebase-functions@v18.0.1
+      - uses: dheshalj/deploy-firebase-functions@v0.0.2
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DENEME_REFLECT_FIREBASE }}
           FIREBASE_PROJECT: deneme-reflect-firebase
