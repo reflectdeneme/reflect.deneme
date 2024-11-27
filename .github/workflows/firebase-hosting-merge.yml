@@ -10,11 +10,18 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: npm ci && npm run build --verbose
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - uses: actions/checkout@v3
+      - name: Install Dependencies
+        run: npm ci
+      - name: Build The Project
+        run: npm run build
+      - name: Deploy Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DENEME_REFLECT_FIREBASE }}
-          channelId: live
           projectId: deneme-reflect-firebase
+      - name: Deploy Firebase Functions
+        run: firebase deploy --only functions
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DENEME_REFLECT_FIREBASE }}
