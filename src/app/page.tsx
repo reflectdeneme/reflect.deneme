@@ -7,7 +7,6 @@ import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 import { Dispatch, SetStateAction } from "react";
 
 export default function Home() {
-  const defaultLayoutPluginInstance = defaultLayoutPlugin();
   return (
     <div>
       <Worker
@@ -17,7 +16,6 @@ export default function Home() {
           fileUrl={
             "https://ik.imagekit.io/reflectsquad/static/kvkk/15_genel_aydinlatma_metni.pdf"
           }
-          plugins={[defaultLayoutPluginInstance]}
         />
       </Worker>
     </div>
