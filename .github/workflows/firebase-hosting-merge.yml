@@ -7,7 +7,7 @@ on:
     branches:
       - main
 jobs:
-  build_and_deploy:
+  build_and_preview:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,7 +20,7 @@ jobs:
           firebaseToolsVersion: 12.7.0
 
       - name: Deploy Firebase Functions
-        run: npx firebase-tools deploy --only functions --token "$FIREBASE_TOKEN" --debug
+        run: npx firebase-tools deploy --only functions --token "$FIREBASE_TOKEN"
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           FIREBASE_PROJECT: deneme-reflect-firebase
