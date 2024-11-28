@@ -9,6 +9,7 @@ import { Dispatch, SetStateAction } from "react";
 export default function Home() {
   return (
     <div>
+      BURAK
       <Worker
         workerUrl={`https://unpkg.com/pdfjs-dist@3.10.111/build/pdf.worker.min.js`}
       >
