@@ -21,7 +21,7 @@ jobs:
 
       # Main branch için özel build komutu
       - name: Build Main
-        run: npm run build-main
+        run: npm run build
 
       # Firebase Hosting'e deploy işlemi (main kanalı)
       - name: Deploy Firebase Hosting (Main)
