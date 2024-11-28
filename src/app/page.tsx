@@ -9,7 +9,7 @@ import { Dispatch, SetStateAction } from "react";
 export default function Home() {
   return (
     <div>
-      FİREBASE DENEME
+      DENEMEEEEEEEEEEEEEE
       <Worker
         workerUrl={`https://unpkg.com/pdfjs-dist@3.10.111/build/pdf.worker.min.js`}
       >
