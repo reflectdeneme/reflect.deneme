@@ -5,7 +5,11 @@
     "rewrites": [
       {
         "source": "**",
-        "function": "ssrreflect"
+        "function": "ssrMain"
+      },
+      {
+        "source": "**",
+        "function": "ssrRelease"
       }
     ]
   },
