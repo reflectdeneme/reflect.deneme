@@ -7,18 +7,5 @@ import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 import { Dispatch, SetStateAction } from "react";
 
 export default function Home() {
-  return (
-    <div>
-      SON DENEMEEEEE
-      <Worker
-        workerUrl={`https://unpkg.com/pdfjs-dist@3.10.111/build/pdf.worker.min.js`}
-      >
-        <Viewer
-          fileUrl={
-            "https://ik.imagekit.io/reflectsquad/static/kvkk/15_genel_aydinlatma_metni.pdf"
-          }
-        />
-      </Worker>
-    </div>
-  );
+  return <div>BURAK BURAK BURAK</div>;
 }
