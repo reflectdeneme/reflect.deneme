@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build:main": "next build && mv .next build/main",
+    "build:release": "next build && mv .next build/release",
     "start": "next start",
     "lint": "next lint",
     "deploy": "firebase deploy"
