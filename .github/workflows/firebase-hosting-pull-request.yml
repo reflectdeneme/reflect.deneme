@@ -17,6 +17,9 @@ jobs:
       - name: Build Release
         run: npm run build
 
+      - name: Deploy Firebase Functions (Release)
+        run: npx firebase-tools deploy --only functions:ssrreflect --token "$FIREBASE_TOKEN"
+
       - name: Deploy Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
@@ -25,7 +28,5 @@ jobs:
           projectId: deneme-reflect-firebase
           channelId: live
 
-      - name: Deploy Firebase Functions (Release)
-        run: npx firebase-tools deploy --only functions:ssrreflect --token "$FIREBASE_TOKEN"
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
