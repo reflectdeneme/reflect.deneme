@@ -8,11 +8,11 @@ const dev = process.env.NODE_ENV !== "production";
 
 const appMain = next({
   dev: false,
-  conf: { distDir: "build/main" },
+  conf: { distDir: "build" },
 });
 const appRelease = next({
   dev: false,
-  conf: { distDir: "build/release" },
+  conf: { distDir: "build" },
 });
 
 const nextjsHandleMain = appMain.getRequestHandler();
