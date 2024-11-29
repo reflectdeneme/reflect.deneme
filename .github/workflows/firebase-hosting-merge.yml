@@ -20,6 +20,9 @@ jobs:
       - name: Build Main
         run: npm run build
 
+      - name: Deploy Firebase Functions (Main)
+        run: npx firebase-tools deploy --only functions:ssrMain --token "$FIREBASE_TOKEN"
+
       - name: Deploy Firebase Hosting (Main)
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
@@ -28,7 +31,5 @@ jobs:
           projectId: deneme-reflect-firebase
           channelId: main1
 
-      - name: Deploy Firebase Functions (Main)
-        run: npx firebase-tools deploy --only functions:ssrMain --token "$FIREBASE_TOKEN"
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
