@@ -4,8 +4,12 @@
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
-        "source": "**",
+        "source": "/--main1/**",
         "function": "ssrMain"
+      },
+      {
+        "source": "/**",
+        "function": "ssrreflect"
       }
     ]
   },

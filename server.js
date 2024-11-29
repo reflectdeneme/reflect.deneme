@@ -10,10 +10,10 @@ const appMain = next({
   dev: false,
   conf: { distDir: "build" },
 });
-// const appRelease = next({
-//   dev: false,
-//   conf: { distDir: "build" },
-// });
+const appRelease = next({
+  dev: false,
+  conf: { distDir: "build" },
+});
 
 const nextjsHandleMain = appMain.getRequestHandler();
 const nextjsHandleRelease = appRelease.getRequestHandler();
@@ -25,9 +25,9 @@ exports.ssrMain = onRequest({ memory: "1GiB" }, (req, res) => {
   });
 });
 
-// exports.ssrreflect = onRequest({ memory: "1GiB" }, (req, res) => {
-//   return appRelease.prepare().then(() => {
-//     const parsedUrl = parse(req.url, true);
-//     return nextjsHandleRelease(req, res, parsedUrl);
-//   });
-// });
+exports.ssrreflect = onRequest({ memory: "1GiB" }, (req, res) => {
+  return appRelease.prepare().then(() => {
+    const parsedUrl = parse(req.url, true);
+    return nextjsHandleRelease(req, res, parsedUrl);
+  });
+});
