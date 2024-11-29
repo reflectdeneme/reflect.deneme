@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build_and_deploy:
+  build_and_preview:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,7 +26,7 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DENEME_REFLECT_FIREBASE }}
           projectId: deneme-reflect-firebase
-          channelId: main
+          channelId: main1
 
       - name: Deploy Firebase Functions (Main)
         run: npx firebase-tools deploy --only functions:ssrMain --token "$FIREBASE_TOKEN"
