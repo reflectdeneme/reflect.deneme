@@ -29,6 +29,6 @@ jobs:
           channelId: main1
 
       - name: Deploy Firebase Functions (Main)
-        run: npx firebase-tools deploy --only functions:ssrreflect --token "$FIREBASE_TOKEN"
+        run: npx firebase-tools deploy --only functions:ssrMain --token "$FIREBASE_TOKEN"
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
