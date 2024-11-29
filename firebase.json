@@ -6,10 +6,6 @@
       {
         "source": "**",
         "function": "ssrMain"
-      },
-      {
-        "source": "**",
-        "function": "ssrreflect"
       }
     ]
   },
