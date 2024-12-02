@@ -5,17 +5,11 @@
     "rewrites": [
       {
         "source": "**",
-        "function": "ssrMain",
-        "condition": {
-          "region": "main1"
-        }
+        "function": "ssrMain"
       },
       {
         "source": "**",
-        "function": "ssrreflect",
-        "condition": {
-          "region": "live"
-        }
+        "function": "ssrreflect"
       }
     ]
   },
