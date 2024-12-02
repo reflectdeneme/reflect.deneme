@@ -1,7 +1,7 @@
 "use client";
 
 const Deneme = () => {
-  return <div>DENEME RELEASE</div>;
+  return <div>SON DENEME</div>;
 };
 
 export default Deneme;
