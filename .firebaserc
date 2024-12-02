@@ -1,6 +1,6 @@
 {
   "projects": {
-    "live": "deneme-reflect-firebase",
+    "default": "deneme-reflect-firebase",
     "preview": "reflect-preview"
   },
   "targets": {
