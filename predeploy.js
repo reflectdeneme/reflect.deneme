@@ -43,4 +43,7 @@ if (environment === "live") {
 }
 
 fs.writeFileSync("firebase.json", JSON.stringify(firebaseConfig, null, 2));
-console.log(`firebase.json updated for ${environment} environment.`);
+console.log(
+  `firebase.json updated for ${environment} environment.`,
+  JSON.stringify(firebaseConfig, null, 2)
+);
