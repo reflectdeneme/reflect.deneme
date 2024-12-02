@@ -8,7 +8,12 @@ const firebaseConfig = {
   hosting: {
     public: "build",
     ignore: ["firebase.json", "**/.*", "**/node_modules/**"],
-    rewrites: [],
+    rewrites: [
+      {
+        source: "**",
+        function: environment === "live" ? "ssrreflect" : "ssrMain",
+      },
+    ],
   },
   functions: [
     {
@@ -30,18 +35,7 @@ const firebaseConfig = {
   ],
 };
 
-if (environment === "live") {
-  firebaseConfig.hosting.rewrites.push({
-    source: "**",
-    function: "ssrreflect",
-  });
-} else {
-  firebaseConfig.hosting.rewrites.push({
-    source: "**",
-    function: "ssrMain",
-  });
-}
-
+// Firebase yapılandırmasını dosyaya yaz
 fs.writeFileSync("firebase.json", JSON.stringify(firebaseConfig, null, 2));
 console.log(
   `firebase.json updated for ${environment} environment.`,
