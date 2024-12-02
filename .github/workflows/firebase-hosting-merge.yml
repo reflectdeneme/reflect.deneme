@@ -32,3 +32,4 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DENEME_REFLECT_FIREBASE }}
           projectId: deneme-reflect-firebase
           channelId: main1
+          target: main1
