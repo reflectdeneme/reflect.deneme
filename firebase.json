@@ -1,14 +1,29 @@
 {
-  "hosting": {
-    "public": "build",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "rewrites": [
-      {
-        "source": "**",
-        "function": "ssrreflect"
-      }
-    ]
-  },
+  "hosting": [
+    {
+      "target": "test",
+      "public": "build",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "function": "ssrMain"
+        }
+      ]
+    },
+    {
+      "target": "live",
+      "public": "build",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "function": "ssrreflect"
+        }
+      ]
+    }
+  ],
+
   "functions": [
     {
       "source": ".",

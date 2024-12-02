@@ -1,5 +1,18 @@
 {
   "projects": {
     "default": "deneme-reflect-firebase"
-  }
+  },
+  "targets": {
+    "deneme-reflect-firebase": {
+      "hosting": {
+        "test": [
+          "deneme-reflect-firebase-test"
+        ],
+        "live": [
+          "deneme-reflect-firebase-live-live"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
