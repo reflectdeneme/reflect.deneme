@@ -14,7 +14,7 @@
     },
     {
       "public": "build",
-      "target": "main1",
+      "target": "preview",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {
