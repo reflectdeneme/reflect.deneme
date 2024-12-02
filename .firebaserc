@@ -9,7 +9,7 @@
           "deneme-reflect-firebase-test"
         ],
         "live": [
-          "deneme-reflect-firebase-live-live"
+          "deneme-reflect-firebase"
         ]
       }
     }
