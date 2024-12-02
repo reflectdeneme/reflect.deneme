@@ -24,11 +24,11 @@ jobs:
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DENEME_REFLECT_FIREBASE }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_PREVIEW_TOKEN }}
           projectId: reflect-preview
           target: preview
 
       - name: Deploy Firebase Functions (Main)
         run: npx firebase-tools deploy --only functions:ssrMain --token "$FIREBASE_TOKEN"
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_PREVIEW_TOKEN }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
