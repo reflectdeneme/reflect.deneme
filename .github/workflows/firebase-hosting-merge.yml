@@ -20,11 +20,6 @@ jobs:
       - name: Build Main
         run: npm run build
 
-      - name: Deploy Firebase Functions (Main)
-        run: npx firebase-tools deploy --only functions:ssrMain --token "$FIREBASE_TOKEN"
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-
       - name: Deploy Firebase Hosting (Main)
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
@@ -32,3 +27,8 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DENEME_REFLECT_FIREBASE }}
           projectId: reflect-preview
           target: preview
+
+      - name: Deploy Firebase Functions (Main)
+        run: npx firebase-tools deploy --only functions:ssrMain --token "$FIREBASE_TOKEN"
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_PREVIEW_TOKEN }}
