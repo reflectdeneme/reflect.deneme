@@ -30,4 +30,3 @@ jobs:
         run: npx firebase-tools deploy --only functions:ssrMain --token "$FIREBASE_TOKEN"
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          ENVIRONMENT: development
