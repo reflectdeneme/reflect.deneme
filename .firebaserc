@@ -1,20 +1,21 @@
 {
   "projects": {
     "default": "deneme-reflect-firebase",
-    "preview": "reflect-preview"
+    "preview": "reflect-preview",
+    "live": "deneme-reflect-firebase"
   },
   "targets": {
-    "deneme-reflect-firebase": {
-      "hosting": {
-        "live": [
-          "deneme-reflect-firebase"
-        ]
-      }
-    },
     "reflect-preview": {
       "hosting": {
         "preview": [
           "reflect-preview"
+        ]
+      }
+    },
+    "deneme-reflect-firebase": {
+      "hosting": {
+        "live": [
+          "deneme-reflect-firebase"
         ]
       }
     }
