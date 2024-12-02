@@ -25,11 +25,11 @@ jobs:
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_PREVIEW_TOKEN }}
-          projectId: reflect-preview
-          target: preview
-          channelId: main
+          projectId: deneme-reflect-firebase
+          channelId: main1
 
       - name: Deploy Firebase Functions (Main)
-        run: npx firebase-tools deploy --only functions:ssrMain --token "$FIREBASE_TOKEN"
+        run: node predeploy.js && npx firebase-tools deploy --only functions:ssrMain --token "$FIREBASE_TOKEN"
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          ENVIRONMENT: development
