@@ -27,6 +27,7 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_PREVIEW_TOKEN }}
           projectId: reflect-preview
           target: preview
+          channelId: main
 
       - name: Deploy Firebase Functions (Main)
         run: npx firebase-tools deploy --only functions:ssrMain --token "$FIREBASE_TOKEN"
