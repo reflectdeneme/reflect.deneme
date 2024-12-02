@@ -1,7 +1,7 @@
 name: Deploy to Firebase Hosting and Functions - Test
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
@@ -23,7 +23,7 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DENEME_REFLECT_FIREBASE }}
           projectId: deneme-reflect-firebase
-          channelId: test
+          channelId: ${{ github.event.pull_request.title }}
           target: test
 
       - name: Deploy Firebase Functions (Test)
