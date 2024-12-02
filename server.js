@@ -7,7 +7,7 @@ const parse = require("url").parse;
 const dev = process.env.NODE_ENV !== "production";
 
 const appMain = next({
-  dev: false,
+  dev: true,
   conf: { distDir: "build" },
 });
 const appRelease = next({
